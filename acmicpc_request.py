@@ -12,7 +12,7 @@ import time
 
 class BOJBot:
     def __init__(self, site):
-        # 엣지 웹 드라이버
+        # 크롬 웹 드라이버
         options = webdriver.ChromeOptions()
         options.add_experimental_option('excludeSwitches', ['enable-logging'])
         self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options= options)
