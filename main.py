@@ -38,3 +38,8 @@ for i in range(0, 5):
             problem_list_real[i].append(problem_list[i][j])
             used_problem.append(problem_list[i][j]) 
         j = j + 1
+
+crawler = acmicpc_request.BOJBot("https://www.acmicpc.net/")
+crawler.login()
+for i in range(0, 5):
+    crawler.self_add_problem(problem_list_real[i])
