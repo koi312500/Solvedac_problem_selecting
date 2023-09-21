@@ -30,8 +30,13 @@ for j in range(0, tag_cnt):
     while True:
         querystring = {"query":f"*b2..g %ko {query_list[j]} s#125.. id:{last_problem_id + 1}..", "sort":"id", "page":"1"}
         response = requests.get(url, headers=headers, params=querystring)
+        if int(response.status_code) != 200:
+            print("Solvedac API Error(Code != 200)")
+            exit(0)
+        
         if int(response.json()['count']) == 0:
             break
+
         try:
             for i in range(0, 100):
                 problem_list[j].append(str(response.json()['items'][i]['problemId']))
