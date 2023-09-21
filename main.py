@@ -12,6 +12,10 @@ problem_list = []
 query_list = []
 tag_cnt = 0
 
+workbook_problem = 101
+while workbook_problem > 100 or workbook_problem < 1:
+    workbook_problem = int(input("How many problem you want to add at each workbook(1 <= problem <= 100)"))
+
 while True:
     a = str(input("Input solvedac's tag(Enter `end` to finsh) : "))
     if a == "end":
@@ -41,7 +45,7 @@ for j in range(0, tag_cnt):
 
 for i in range(0, tag_cnt):
     j = 0
-    while len(problem_list_real[i]) <= 99:
+    while len(problem_list_real[i]) <= workbook_problem - 1:
         if not problem_list[i][j] in used_problem:
             problem_list_real[i].append(problem_list[i][j])
             used_problem.append(problem_list[i][j]) 
