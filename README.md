@@ -1,7 +1,8 @@
 # Solvedac_problem_selecting
 
 
-This program selects problems with a specific SolveDoc tag and creates a workbook.
+This program selects problems with a specific Solvedac tag and creates a BOJ workbook.
+
 It does not crawl BOJ sites. (According to BOJ ToS)
 
 ## How to run
