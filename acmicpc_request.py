@@ -29,13 +29,14 @@ class BOJBot:
     def kill(self):
         self.driver.quit()
 
-    # 로그인을 수행하는 메서드입니다.
+    # 로그인을 수행하는 메서드입니다. (직접 로그인 해야함)
     def login(self):
         print("Waiting for logining.... 15s")
+        print("Login and move to workbook creation screen")
         time.sleep(15)
 
+    # 백준 문제집에 매크로로 문제를 추가해줍니다.
     def self_add_problem(self, problem_list):
-        print("You Loser")
         BOJ_box = self.driver.find_element(By.XPATH, '/html/body/div[2]/div[2]/div[3]/div[3]/form/div/div[2]/div[2]/div/input')
         BOJ_box.send_keys(Keys.ENTER)
         for i in problem_list:
@@ -44,4 +45,5 @@ class BOJBot:
             time.sleep(0.01)
             BOJ_box.send_keys(Keys.ENTER)
         print("Waiting for finishing.... 15s")
+        print("Please save the workbook, and move to new workbook creation screen.")
         time.sleep(15)
