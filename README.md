@@ -12,3 +12,4 @@ It does not crawl BOJ sites. (According to BOJ ToS)
 2. `pip install -r requirements.txt` to install all python library.
 3. `python main.py` to execute program!
     - Follow the instruction presented by computer.
+    - You need to request 2 or more tag if you want more problem at one tag.

@@ -14,7 +14,7 @@ tag_cnt = 0
 
 workbook_problem = 101
 while workbook_problem > 100 or workbook_problem < 1:
-    workbook_problem = int(input("How many problem you want to add at each workbook(1 <= problem <= 100)"))
+    workbook_problem = int(input("How many problem you want to add at each workbook(1 <= problem <= 100) : "))
 
 while True:
     a = str(input("Input solvedac's tag(Enter `end` to finsh) : "))
@@ -28,7 +28,7 @@ while True:
 for j in range(0, tag_cnt):
     last_problem_id = 1000
     while True:
-        querystring = {"query":f"*b2..g %ko {query_list[j]} s#125.. id:{last_problem_id + 1}..", "sort":"id", "page":"1"}
+        querystring = {"query":f"*b3..p3 %ko {query_list[j]} s#80.. id:{last_problem_id + 1}.. -s@jw070103", "sort":"id", "page":"1"}
         response = requests.get(url, headers=headers, params=querystring)
         if int(response.status_code) != 200:
             print("Solvedac API Error(Code != 200)")
@@ -50,6 +50,7 @@ for j in range(0, tag_cnt):
 
 for i in range(0, tag_cnt):
     j = 0
+    print(i)
     while len(problem_list_real[i]) <= workbook_problem - 1:
         if not problem_list[i][j] in used_problem:
             problem_list_real[i].append(problem_list[i][j])
